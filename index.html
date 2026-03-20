@@ -3,40 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ======= Elite SEO & Meta ======= -->
-    <title>conspiracy.im — Archive of Unexplained Narratives</title>
-    <meta name="description" content="Anonymous archive preserving suppressed signals, alien encounters, lunar anomalies, black triangles, sub-ice structures and recurring broadcast patterns.">
-    <meta name="keywords" content="conspiracy archive, unexplained phenomena, ufo files, classified documents, antarctic anomalies, lunar transcript">
-    <meta name="author" content="Anonymous Archivist">
+
+    <!-- Elite SEO & Meta -->
+    <title>conspiracy.im — What They Tried to Bury</title>
+    <meta name="description" content="Anonymous vault of suppressed signals, alien encounters, lunar secrets, black triangles, sub-ice watchers and broadcast patterns they never wanted connected. Read before it's gone.">
+    <meta name="keywords" content="conspiracy archive, ufo files, alien contact, classified leaks, antarctic anomalies, lunar transcript, black triangle ufo">
+    <meta name="author" content="Anonymous Archivist Collective">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://conspiracy.im/">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="conspiracy.im — The Archive">
-    <meta property="og:description" content="Preserving what they tried to erase.">
+    <meta property="og:title" content="conspiracy.im — The Archive They Can't Delete">
+    <meta property="og:description" content="Preserving the signals, patterns and anomalies they tried to erase. Unfiltered.">
     <meta property="og:image" content="/og-image-1200x630.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://conspiracy.im/">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="conspiracy.im">
-    <meta name="twitter:description" content="The signals they tried to bury.">
-    <meta name="twitter:image" content="/og-image-1200x630.jpg">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "conspiracy.im",
-      "url": "https://conspiracy.im",
-      "description": "Anonymous archive of declassified anomalies and suppressed signals."
-    }
-    </script>
 
     <!-- Icons -->
     <link rel="icon" href="/favicon.ico">
@@ -46,9 +27,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Three.js (modern ESM version - r161) -->
+    <!-- Three.js -->
     <script type="module">
         import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js';
         window.THREE = THREE;
@@ -59,187 +40,736 @@
     <style>
         :root {
             --accent: 20 243 200;
-            --accent-glow: rgba(20, 243, 200, 0.7);
+            --accent-soft: rgba(20, 243, 200, 0.16);
+            --accent-strong: rgba(20, 243, 200, 0.88);
+            --danger: 180 32 46;
+            --bg0: #02040a;
+            --bg1: #050913;
+            --bg2: #09101c;
+            --panel: rgba(8, 13, 24, 0.78);
+            --line: rgba(255,255,255,0.08);
+            --text-dim: rgba(229, 245, 242, 0.64);
         }
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(20,243,200,0.08) 0%, transparent 30%),
+                radial-gradient(circle at 82% 16%, rgba(180,32,46,0.10) 0%, transparent 22%),
+                radial-gradient(circle at 50% 120%, rgba(20,243,200,0.07) 0%, transparent 32%),
+                linear-gradient(180deg, #02040a 0%, #050913 48%, #02040a 100%);
+            color: #edf7f5;
+        }
+
         body {
             font-family: 'Inter', system-ui, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
-        .logo-font {
-            font-family: 'Space Grotesk', monospace;
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0.13;
+            background-image:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0 1px, transparent 1px),
+                radial-gradient(circle at 80% 40%, rgba(255,255,255,0.05) 0 1px, transparent 1px),
+                radial-gradient(circle at 40% 75%, rgba(255,255,255,0.04) 0 1px, transparent 1px);
+            background-size: 180px 180px, 240px 240px, 300px 300px;
+            mix-blend-mode: screen;
         }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            background:
+                linear-gradient(to bottom, rgba(0,0,0,0.12), rgba(0,0,0,0.28)),
+                radial-gradient(circle at center, transparent 48%, rgba(0,0,0,0.34) 100%);
+        }
+
+        .logo-font { font-family: 'Space Grotesk', monospace; }
+
+        .chrome-line {
+            position: relative;
+        }
+
+        .chrome-line::before,
+        .chrome-line::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(20,243,200,0.45), transparent);
+            left: 0;
+            right: 0;
+        }
+
+        .chrome-line::before { top: 0; }
+        .chrome-line::after { bottom: 0; }
+
         .glow-text {
-            text-shadow: 0 0 30px rgb(var(--accent) / 0.8), 0 0 60px rgb(var(--accent) / 0.4);
+            text-shadow:
+                0 0 18px rgba(20,243,200,0.40),
+                0 0 38px rgba(20,243,200,0.18),
+                0 0 80px rgba(20,243,200,0.10);
         }
+
+        .red-glow {
+            box-shadow: 0 0 80px rgba(180,32,46,0.16);
+        }
+
         .scanline {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
-            animation: scan 10s linear infinite;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(255,255,255,0.038) 48%,
+                rgba(255,255,255,0.015) 50%,
+                transparent 100%
+            );
+            animation: scan 11s linear infinite;
             pointer-events: none;
             mix-blend-mode: screen;
-            opacity: 0.6;
+            opacity: 0.52;
             z-index: 2;
         }
+
         @keyframes scan {
             0% { transform: translateY(-120%); }
-            100% { transform: translateY(350%); }
+            100% { transform: translateY(360%); }
         }
-        .card {
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+        .signal-noise {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.08;
+            background-image:
+                repeating-linear-gradient(
+                    to bottom,
+                    rgba(255,255,255,0.09) 0px,
+                    rgba(255,255,255,0.09) 1px,
+                    transparent 1px,
+                    transparent 3px
+                );
+            mix-blend-mode: soft-light;
         }
-        .card:hover {
-            transform: translateY(-14px) scale(1.02);
-            box-shadow: 0 30px 60px -15px rgb(var(--accent) / 0.25);
+
+        .nav-shell {
+            background: linear-gradient(180deg, rgba(0,0,0,0.88), rgba(0,0,0,0.70));
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.30);
         }
+
+        .nav-link {
+            position: relative;
+            color: rgba(255,255,255,0.74);
+            transition: color 0.25s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 1.5px;
+            background: linear-gradient(90deg, rgba(20,243,200,0.92), rgba(20,243,200,0.15));
+            transition: width 0.28s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .clearance-pill {
+            border: 1px solid rgba(234,179,8,0.55);
+            color: rgba(250,204,21,0.92);
+            background: linear-gradient(180deg, rgba(255,191,0,0.08), rgba(255,191,0,0.03));
+            box-shadow: inset 0 0 20px rgba(255,191,0,0.04);
+        }
+
+        .hero-wrap {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-wrap::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 50% 35%, rgba(20,243,200,0.09) 0%, transparent 24%),
+                radial-gradient(circle at 52% 45%, rgba(20,243,200,0.05) 0%, transparent 32%),
+                radial-gradient(circle at 48% 70%, rgba(180,32,46,0.06) 0%, transparent 24%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
         #three-canvas {
             position: absolute;
             inset: 0;
             z-index: 1;
             mix-blend-mode: screen;
-            opacity: 0.8;
+            opacity: 0.78;
         }
+
+        .hero-panel {
+            position: relative;
+            z-index: 10;
+            max-width: 1100px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background:
+                linear-gradient(180deg, rgba(7,10,19,0.42), rgba(7,10,19,0.20)),
+                rgba(0,0,0,0.18);
+            backdrop-filter: blur(16px);
+            box-shadow:
+                0 30px 90px rgba(0,0,0,0.38),
+                inset 0 1px 0 rgba(255,255,255,0.04);
+        }
+
+        .hero-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            border: 1px solid rgba(20,243,200,0.06);
+            box-shadow: inset 0 0 60px rgba(20,243,200,0.04);
+        }
+
+        .transmission-badge {
+            background: linear-gradient(180deg, rgba(0,0,0,0.46), rgba(0,0,0,0.24));
+            border: 1px solid rgba(20,243,200,0.18);
+            color: rgba(235,255,250,0.82);
+            box-shadow: 0 0 24px rgba(20,243,200,0.08);
+        }
+
+        .transmission-dot {
+            box-shadow: 0 0 18px rgba(20,243,200,0.68);
+        }
+
+        .kicker {
+            letter-spacing: 0.38em;
+            color: rgba(255,255,255,0.42);
+        }
+
+        .hero-quote {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .hero-quote em {
+            color: rgba(20,243,200,0.92);
+            font-style: normal;
+        }
+
+        .hero-subcopy {
+            color: rgba(219,231,229,0.74);
+        }
+
+        .btn-primary {
+            background: linear-gradient(180deg, rgba(255,255,255,1), rgba(215,255,248,0.98));
+            color: #02040a;
+            box-shadow: 0 22px 50px rgba(20,243,200,0.18);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(180deg, rgba(165,243,224,1), rgba(120,232,207,1));
+            box-shadow: 0 28px 60px rgba(20,243,200,0.28);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(180deg, rgba(6,10,18,0.76), rgba(6,10,18,0.52));
+            border: 1px solid rgba(20,243,200,0.24);
+            color: rgba(207,255,247,0.90);
+            box-shadow: inset 0 0 18px rgba(20,243,200,0.04);
+            transition: transform 0.22s ease, border-color 0.22s ease, color 0.22s ease;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            border-color: rgba(20,243,200,0.56);
+            color: #fff;
+        }
+
+        .status-strip {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background:
+                linear-gradient(90deg, rgba(20,243,200,0.05), transparent 20%, transparent 80%, rgba(180,32,46,0.05)),
+                rgba(0,0,0,0.22);
+        }
+
+        .section-shell {
+            position: relative;
+            z-index: 5;
+        }
+
+        .section-heading {
+            color: rgba(255,255,255,0.96);
+            letter-spacing: -0.04em;
+        }
+
+        .section-sub {
+            color: rgba(255,255,255,0.48);
+        }
+
+        .search-shell {
+            position: relative;
+        }
+
+        .search-shell::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            padding: 1px;
+            background: linear-gradient(90deg, rgba(20,243,200,0.18), rgba(255,255,255,0.05), rgba(180,32,46,0.14));
+            -webkit-mask:
+                linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .search-input {
+            background:
+                linear-gradient(180deg, rgba(0,0,0,0.54), rgba(0,0,0,0.34));
+            color: #f3fbfa;
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.02),
+                0 8px 20px rgba(0,0,0,0.18);
+        }
+
+        .search-input::placeholder {
+            color: rgba(255,255,255,0.34);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: rgba(20,243,200,0.38);
+            box-shadow:
+                0 0 0 4px rgba(20,243,200,0.08),
+                inset 0 1px 0 rgba(255,255,255,0.02);
+        }
+
+        .card {
+            position: relative;
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                        box-shadow 0.45s ease,
+                        border-color 0.45s ease,
+                        background 0.45s ease;
+            background:
+                linear-gradient(180deg, rgba(12,18,32,0.92), rgba(6,10,18,0.92));
+            border: 1px solid rgba(255,255,255,0.08);
+            overflow: hidden;
+            box-shadow:
+                0 16px 34px rgba(0,0,0,0.26),
+                inset 0 1px 0 rgba(255,255,255,0.03);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(180deg, rgba(20,243,200,0.06), transparent 35%, transparent 65%, rgba(180,32,46,0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            top: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(20,243,200,0.44), transparent);
+            opacity: 0.0;
+            transition: opacity 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow:
+                0 34px 72px rgba(0,0,0,0.34),
+                0 0 0 1px rgba(20,243,200,0.14),
+                0 0 36px rgba(20,243,200,0.08);
+            border-color: rgba(20,243,200,0.30);
+            background:
+                linear-gradient(180deg, rgba(13,20,34,0.96), rgba(7,11,20,0.96));
+        }
+
+        .card:hover::before,
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card-image-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.46)),
+                radial-gradient(circle at 50% 25%, transparent 0%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0.32) 100%);
+            pointer-events: none;
+        }
+
+        .card img {
+            transition: transform 0.9s ease, filter 0.9s ease;
+            filter: brightness(0.68) saturate(0.86) contrast(1.1);
+        }
+
+        .card:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.84) saturate(0.95) contrast(1.12);
+        }
+
+        .file-tag {
+            color: rgba(123, 246, 224, 0.92);
+        }
+
+        .danger-pip {
+            width: 8px;
+            height: 8px;
+            border-radius: 9999px;
+            background: rgba(255,84,103,0.84);
+            box-shadow: 0 0 18px rgba(255,84,103,0.50);
+        }
+
+        .read-link {
+            color: rgba(20,243,200,0.95);
+        }
+
+        .read-link:hover {
+            color: #ffffff;
+        }
+
+        .footer-shell {
+            background:
+                linear-gradient(180deg, rgba(0,0,0,0.62), rgba(0,0,0,0.9));
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .tiny {
+            letter-spacing: 0.22em;
+        }
+
+        @media (max-width: 1024px) {
+            h1.hero-title {
+                font-size: 6rem;
+                line-height: 0.92;
+            }
+        }
+
         @media (max-width: 768px) {
-            h1.logo-font { font-size: 5.5rem; line-height: 0.9; }
-            p.text-3xl { font-size: 1.5rem; }
+            h1.hero-title {
+                font-size: 4.5rem;
+                line-height: 0.94;
+                letter-spacing: -0.07em;
+            }
+
+            .hero-panel {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+        }
+
+        @media (max-width: 520px) {
+            h1.hero-title {
+                font-size: 3.4rem;
+            }
         }
     </style>
 </head>
-<body class="bg-[#02040a] text-gray-100 overflow-x-hidden">
+<body class="text-gray-100">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 inset-x-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
+    <nav class="fixed top-0 inset-x-0 z-50 nav-shell backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center text-sm font-bold text-black">C</div>
-                <span class="logo-font text-3xl font-semibold tracking-tight">conspiracy.im</span>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center text-sm font-bold text-black shadow-lg shadow-cyan-500/20">C</div>
+                <span class="logo-font text-3xl font-semibold tracking-tight text-white">conspiracy.im</span>
             </div>
 
             <div class="hidden md:flex items-center gap-10 text-sm font-medium">
-                <a href="#" class="hover:text-cyan-400 transition-colors">Home</a>
-                <a href="#featured" class="hover:text-cyan-400 transition-colors">Archive</a>
-                <a href="#" class="hover:text-cyan-400 transition-colors">Signals</a>
-                <a href="/humans.txt" class="hover:text-cyan-400 transition-colors">humans.txt</a>
+                <a href="#" class="nav-link">Home</a>
+                <a href="#featured" class="nav-link">Archive</a>
+                <a href="#" class="nav-link">Signals</a>
             </div>
 
             <div class="flex items-center gap-6">
-                <div class="px-4 py-1 text-xs font-mono border border-yellow-500/60 text-yellow-400 rounded-full tracking-wider">CLEARANCE VII</div>
-                <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+                <div class="clearance-pill px-4 py-1.5 text-[11px] font-mono rounded-full tracking-[0.28em] uppercase">
+                    Clearance VII
+                </div>
+                <button id="menu-btn" class="md:hidden text-3xl text-white/90" aria-label="Toggle menu">☰</button>
             </div>
         </div>
 
-        <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-t border-white/10 py-6 px-6">
             <div class="flex flex-col gap-6 text-lg">
-                <a href="#" class="hover:text-cyan-400">Home</a>
-                <a href="#featured" class="hover:text-cyan-400">Archive</a>
-                <a href="#" class="hover:text-cyan-400">Signals</a>
-                <a href="/humans.txt" class="hover:text-cyan-400">humans.txt</a>
+                <a href="#" class="hover:text-cyan-400 transition-colors">Home</a>
+                <a href="#featured" class="hover:text-cyan-400 transition-colors">Archive</a>
+                <a href="#" class="hover:text-cyan-400 transition-colors">Signals</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <header class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <header class="hero-wrap">
         <canvas id="three-canvas"></canvas>
         <div class="scanline"></div>
+        <div class="signal-noise"></div>
 
-        <div class="relative z-10 max-w-5xl px-6 text-center">
-            <div class="inline-flex items-center gap-3 bg-black/40 backdrop-blur-lg px-7 py-3 rounded-full border border-cyan-500/20 mb-10 text-sm font-mono tracking-wider">
-                <div class="w-2.5 h-2.5 bg-cyan-400 rounded-full animate-pulse"></div>
-                ARCHIVE ACTIVE • 20 MAR 2026
-            </div>
+        <div class="relative z-10 max-w-6xl px-6 pt-24">
+            <div class="hero-panel red-glow rounded-[2rem] p-8 sm:p-12 md:p-16">
+                <div class="flex flex-col items-center text-center">
+                    <div class="transmission-badge inline-flex items-center gap-3 px-6 py-3 rounded-full text-[12px] sm:text-sm font-mono tracking-[0.24em] uppercase mb-8">
+                        <div class="w-2.5 h-2.5 bg-cyan-400 rounded-full animate-pulse transmission-dot"></div>
+                        Archive active • restricted material
+                    </div>
 
-            <h1 class="logo-font text-7xl sm:text-9xl md:text-[12rem] lg:text-[14rem] leading-none font-black tracking-[-0.08em] glow-text">
-                THE ARCHIVE
-            </h1>
+                    <div class="kicker text-[10px] sm:text-xs font-mono uppercase mb-5">
+                        Unauthorised correlation of buried anomalies
+                    </div>
 
-            <p class="mt-6 text-2xl sm:text-3xl md:text-4xl text-gray-300 font-light max-w-3xl mx-auto">
-                Preserving the signals they tried to bury
-            </p>
+                    <h1 class="hero-title logo-font text-[7rem] sm:text-[8.5rem] md:text-[11rem] lg:text-[13rem] leading-none font-black tracking-[-0.09em] text-white glow-text">
+                        THE ARCHIVE
+                    </h1>
 
-            <div class="mt-16 flex flex-col sm:flex-row gap-6 justify-center">
-                <button onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})"
-                        class="px-10 py-5 bg-white text-black font-semibold rounded-xl hover:bg-cyan-400 transition-all text-lg shadow-2xl shadow-cyan-500/30">
-                    ENTER THE VAULT
-                </button>
-                <button class="px-10 py-5 border border-cyan-500/40 hover:border-cyan-400 text-cyan-300 hover:text-white rounded-xl transition-all text-lg">
-                    BROWSE TRANSMISSIONS
-                </button>
+                    <div class="mt-5 h-px w-40 bg-gradient-to-r from-transparent via-cyan-400/80 to-transparent"></div>
+
+                    <p class="hero-quote mt-8 text-2xl sm:text-3xl md:text-4xl font-light max-w-4xl leading-tight">
+                        They dismissed the patterns as coincidence.
+                        <em>Then the same shapes, voices and absences kept returning.</em>
+                    </p>
+
+                    <p class="hero-subcopy mt-6 text-lg sm:text-xl md:text-2xl max-w-3xl leading-relaxed">
+                        A private vault of signals, anomalies, suppressed narratives and recurring structures —
+                        catalogued, indexed and preserved before deletion, distortion or disappearance.
+                    </p>
+
+                    <div class="mt-12 flex flex-col sm:flex-row gap-5 justify-center">
+                        <button onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})"
+                                class="btn-primary px-9 py-5 rounded-2xl font-semibold text-lg">
+                            Access the hidden files
+                        </button>
+
+                        <button onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})"
+                                class="btn-secondary px-9 py-5 rounded-2xl text-lg font-medium">
+                            Begin reading before it is scrubbed →
+                        </button>
+                    </div>
+
+                    <div class="status-strip mt-12 w-full rounded-2xl px-5 py-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
+                            <div>
+                                <div class="text-[10px] uppercase tracking-[0.28em] text-white/36 font-mono">Status</div>
+                                <div class="mt-1 text-sm text-white/78">Leak sequence ongoing</div>
+                            </div>
+                            <div>
+                                <div class="text-[10px] uppercase tracking-[0.28em] text-white/36 font-mono">Integrity</div>
+                                <div class="mt-1 text-sm text-white/78">Fragmented but recoverable</div>
+                            </div>
+                            <div>
+                                <div class="text-[10px] uppercase tracking-[0.28em] text-white/36 font-mono">Advisory</div>
+                                <div class="mt-1 text-sm text-white/78">Reader discretion strongly advised</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500 text-sm font-mono flex items-center gap-3">
-            SCROLL FOR TRUTH <span class="animate-bounce">↓</span>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-gray-500 text-[11px] sm:text-sm font-mono tracking-[0.22em] uppercase flex items-center gap-3">
+            Scroll to inspect recovered files <span class="animate-bounce text-cyan-400">↓</span>
         </div>
     </header>
 
     <!-- Featured Articles -->
-    <section id="featured" class="max-w-7xl mx-auto px-6 py-24">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
-            <h2 class="text-5xl md:text-6xl font-light tracking-tight">Recent Transmissions</h2>
-            <input id="search-input" type="text" placeholder="Search archive…" 
-                   class="w-full md:w-80 bg-black/40 border border-gray-700 focus:border-cyan-500 rounded-full px-6 py-4 outline-none transition-colors">
+    <section id="featured" class="section-shell max-w-7xl mx-auto px-6 py-24">
+        <div class="chrome-line rounded-3xl border border-white/8 bg-black/20 p-8 md:p-10 mb-14">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+                <div>
+                    <div class="text-[11px] font-mono uppercase tracking-[0.34em] text-cyan-400/70 mb-3">
+                        Recovered archive index
+                    </div>
+                    <h2 class="section-heading text-5xl md:text-6xl font-light tracking-tight">
+                        Read & search the hidden files
+                    </h2>
+                    <p class="section-sub mt-4 text-base md:text-lg max-w-2xl">
+                        Search the recovered material by title or phrase. Each file remains directly accessible.
+                    </p>
+                </div>
+
+                <div class="search-shell w-full md:w-[24rem] rounded-full">
+                    <input
+                        id="search-input"
+                        type="text"
+                        placeholder="Search the forbidden…"
+                        class="search-input w-full rounded-full px-6 py-4"
+                    >
+                </div>
+            </div>
         </div>
 
         <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Cards populated by JS below -->
+            <!-- Populated by JS -->
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 py-16 text-center text-gray-500 text-sm">
+    <footer class="footer-shell py-20 text-center text-gray-500 text-sm">
         <div class="max-w-7xl mx-auto px-6">
-            <p class="logo-font text-4xl mb-4">conspiracy.im</p>
-            <p class="italic text-xl mb-6">"Nothing remains hidden forever."</p>
-            <p class="text-xs">© 1978–2026 • Anonymous Archivist Collective • All content speculative</p>
-            <div class="mt-8 flex justify-center gap-6 text-xs">
-                <a href="/humans.txt" class="hover:text-cyan-400 transition-colors">humans.txt</a>
-                <a href="/robots.txt" class="hover:text-cyan-400 transition-colors">robots.txt</a>
-            </div>
+            <p class="logo-font text-4xl sm:text-5xl text-white/90 mb-4">conspiracy.im</p>
+            <p class="italic text-xl sm:text-2xl text-white/68 mb-8 max-w-3xl mx-auto">
+                “Nothing remains hidden forever. But some things do not stay buried without consequence.”
+            </p>
+            <p class="tiny text-[11px] uppercase text-white/34">
+                © 1978–2026 • Anonymous • Viewer discretion strongly advised
+            </p>
         </div>
     </footer>
 
-    <!-- Article Data & Logic -->
+    <!-- Article Data -->
     <script>
         const articles = [
-            { num: "001", title: "Grey Visitors and the Silence Above", summary: "Decades of synchronized eyewitness testimony converge on one conclusion: they never left.", category: "Aliens", slug: "article-001.html" },
-            { num: "002", title: "The Hollow Signal", summary: "A repeating frequency first detected in 1963 has returned — this time from inside the Earth.", category: "Signals", slug: "article-002.html" },
-            { num: "003", title: "Black Triangles Over Water", summary: "Mass sightings across the Pacific. Official explanations fail every known test of physics.", category: "Government", slug: "article-003.html" },
-            { num: "004", title: "The Forgotten Lunar Transcript", summary: "NASA audio logs from Apollo 11 that were never meant to reach the public domain.", category: "Ancient", slug: "article-004.html" },
-            { num: "005", title: "The Watchers Beneath the Ice", summary: "Antarctic seismic data reveals structures older than human civilization.", category: "Paranormal", slug: "article-005.html" },
-            { num: "006", title: "Patterns in the Static", summary: "Every major broadcast interruption since 1977 contains the same hidden sequence.", category: "Signals", slug: "article-006.html" }
+            {
+                num: "001",
+                title: "Grey Visitors and the Silence Above",
+                summary: "They were here. They still are. Eyewitnesses silenced, radar ghosts ignored. What happens when the silence breaks?",
+                category: "Aliens",
+                slug: "article-001.html",
+                img: "https://miro.medium.com/v2/resize:fit:1400/1*ydp9M7DT52mshFWkq38W1w.jpeg"
+            },
+            {
+                num: "002",
+                title: "The Hollow Signal",
+                summary: "A frequency from inside the Earth. First heard in 1963. Now louder. What’s broadcasting from below?",
+                category: "Signals",
+                slug: "article-002.html",
+                img: "https://thumbs.dreamstime.com/b/hidden-underground-ai-bunker-featuring-glowing-stream-light-along-rocky-terrain-night-deep-earth-concealed-360378888.jpg"
+            },
+            {
+                num: "003",
+                title: "Black Triangles Over Water",
+                summary: "Silent giants glide where no aircraft can. They enter the ocean without a ripple. Official story? Still waiting.",
+                category: "Government",
+                slug: "article-003.html",
+                img: "https://hangar1publishing.com/cdn/shop/articles/90a0bc6cc34c73edd4e5a159e2360a7c.png?v=1746046042"
+            },
+            {
+                num: "004",
+                title: "The Forgotten Lunar Transcript",
+                summary: "Apollo 11 voices cut from history. Structures on the far side. They saw something. We weren’t supposed to know.",
+                category: "Ancient",
+                slug: "article-004.html",
+                img: "https://www.tsijournals.com/articles-images/space-exploration-image-unusual-structures-discovered-5-2-102-g001.png"
+            },
+            {
+                num: "005",
+                title: "The Watchers Beneath the Ice",
+                summary: "Antarctica hides more than cold. Structures older than us. Still active. The ice is thinning.",
+                category: "Paranormal",
+                slug: "article-005.html",
+                img: "https://indiandefencereview.com/wp-content/uploads/2025/10/hidden-giant-beneath-the-ice-vast-granite-body-discovered-under-west-antarctica.png"
+            },
+            {
+                num: "006",
+                title: "Patterns in the Static",
+                summary: "Every hijack, glitch, blackout since 1977 hides the same code. The noise isn’t broken. It’s talking.",
+                category: "Signals",
+                slug: "article-006.html",
+                img: "https://upload.wikimedia.org/wikipedia/commons/a/a8/TV_noise.jpg"
+            }
         ];
 
         function renderArticles(filter = "") {
             const grid = document.getElementById("articles-grid");
             const term = filter.toLowerCase().trim();
-            const filtered = term 
-                ? articles.filter(a => a.title.toLowerCase().includes(term) || a.summary.toLowerCase().includes(term))
+
+            const shown = term
+                ? articles.filter(a =>
+                    a.title.toLowerCase().includes(term) ||
+                    a.summary.toLowerCase().includes(term) ||
+                    a.category.toLowerCase().includes(term)
+                )
                 : articles;
 
-            grid.innerHTML = filtered.map(a => `
-                <a href="articles/${a.slug}" class="card group block bg-gray-950/60 border border-gray-800 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-colors">
-                    <div class="p-8">
-                        <div class="text-xs font-mono text-cyan-400/70 mb-2">FILE • ${a.num}</div>
-                        <h3 class="text-2xl font-light mb-4 group-hover:text-cyan-400 transition-colors">${a.title}</h3>
-                        <p class="text-gray-400 text-base line-clamp-3">${a.summary}</p>
-                        <div class="mt-6 inline-block text-cyan-400 text-sm font-medium group-hover:underline">Read File →</div>
+            if (!shown.length) {
+                grid.innerHTML = `
+                    <div class="col-span-full rounded-3xl border border-white/10 bg-black/25 px-8 py-16 text-center">
+                        <div class="text-[11px] uppercase tracking-[0.30em] text-cyan-400/60 font-mono mb-3">No match located</div>
+                        <div class="text-3xl text-white/80 font-light">No recovered file matches that query.</div>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = shown.map(a => `
+                <a href="articles/${a.slug}" class="card group block rounded-[1.7rem] overflow-hidden">
+                    <div class="card-image-wrap">
+                        <img src="${a.img}" alt="${a.title}" class="w-full h-52 object-cover">
+                    </div>
+
+                    <div class="p-6 sm:p-7">
+                        <div class="flex items-center justify-between gap-4 mb-3">
+                            <div class="file-tag text-[11px] font-mono tracking-[0.24em] uppercase">
+                                File • ${a.num} • ${a.category}
+                            </div>
+                            <div class="danger-pip" aria-hidden="true"></div>
+                        </div>
+
+                        <h3 class="text-[1.6rem] leading-tight font-light mb-3 text-white group-hover:text-cyan-200 transition-colors">
+                            ${a.title}
+                        </h3>
+
+                        <p class="text-white/54 text-[1rem] leading-relaxed line-clamp-3">
+                            ${a.summary}
+                        </p>
+
+                        <div class="mt-6 inline-flex items-center gap-3 read-link text-sm font-medium tracking-[0.08em] uppercase transition-colors">
+                            Read file
+                            <span class="text-lg transition-transform duration-300 group-hover:translate-x-1">→</span>
+                        </div>
                     </div>
                 </a>
             `).join('');
         }
 
-        // Search
-        document.getElementById("search-input").addEventListener("input", e => {
-            renderArticles(e.target.value);
-        });
+        const searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("input", e => renderArticles(e.target.value));
 
-        // Mobile menu
         document.getElementById("menu-btn").addEventListener("click", () => {
             document.getElementById("mobile-menu").classList.toggle("hidden");
         });
 
-        // Initial render
         renderArticles();
     </script>
 
@@ -248,26 +778,25 @@
         import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js';
 
         let scene, camera, renderer, particlesMesh, lineSegments;
-        const particleCount = 1200;
-        const connectionDistance = 160;
+        const particleCount = 900;
+        const connectionDistance = 145;
 
         function init() {
             const canvas = document.getElementById('three-canvas');
             renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8));
             renderer.setSize(window.innerWidth, window.innerHeight);
 
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 3000);
             camera.position.z = 850;
 
-            // Particles
             const geometry = new THREE.BufferGeometry();
             const positions = new Float32Array(particleCount * 3);
             const colors = new Float32Array(particleCount * 3);
 
             for (let i = 0; i < particleCount * 3; i += 3) {
-                const r = 600 + Math.random() * 600;
+                const r = 600 + Math.random() * 700;
                 const theta = Math.random() * Math.PI * 2;
                 const phi = Math.acos(2 * Math.random() - 1);
 
@@ -275,30 +804,34 @@
                 positions[i+1] = r * Math.sin(phi) * Math.sin(theta);
                 positions[i+2] = r * Math.cos(phi);
 
-                const hue = 0.45 + Math.random() * 0.15;
-                const color = new THREE.Color().setHSL(hue, 0.9, 0.6);
-                colors[i] = color.r; colors[i+1] = color.g; colors[i+2] = color.b;
+                const pick = Math.random();
+                const color = new THREE.Color(
+                    pick > 0.94 ? 0xff4d5f : 0x7dfce6
+                );
+
+                colors[i] = color.r;
+                colors[i+1] = color.g;
+                colors[i+2] = color.b;
             }
 
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
             geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
             const material = new THREE.PointsMaterial({
-                size: 2.8,
+                size: 2.4,
                 vertexColors: true,
                 transparent: true,
-                opacity: 0.9,
+                opacity: 0.84,
                 blending: THREE.AdditiveBlending
             });
 
             particlesMesh = new THREE.Points(geometry, material);
             scene.add(particlesMesh);
 
-            // Connection lines
             const lineMaterial = new THREE.LineBasicMaterial({
-                color: 0x14f3c8,
+                color: 0x59f5db,
                 transparent: true,
-                opacity: 0.08
+                opacity: 0.055
             });
 
             const lineGeometry = new THREE.BufferGeometry();
@@ -318,9 +851,9 @@
         function animate() {
             requestAnimationFrame(animate);
 
-            particlesMesh.rotation.y += 0.0004;
+            particlesMesh.rotation.y += 0.00032;
+            particlesMesh.rotation.x += 0.00008;
 
-            // Dynamic connections
             const positions = particlesMesh.geometry.attributes.position.array;
             const linePos = [];
 
@@ -346,7 +879,6 @@
             renderer.render(scene, camera);
         }
 
-        // Start when loaded
         window.addEventListener('load', init);
     </script>
 </body>
