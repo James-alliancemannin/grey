@@ -1,0 +1,49 @@
+# conspiracy.im robots.txt
+# Last updated: March 20, 2026
+# Purpose: Allow indexing of public archive content while blocking sensitive / dev paths
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /articles/
+Allow: /articles/article-*.html
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /backup/
+Disallow: /backups/
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /logs/
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /.gitignore
+Disallow: /*.bak
+Disallow: /*.old
+Disallow: /*.swp
+Disallow: /*~
+
+# Block AI training crawlers that ignore robots.txt anyway (but we try)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Anthropic-Web-Crawler
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# Sitemap (add this line once you create one)
+# Sitemap: https://conspiracy.im/sitemap.xml
+
+# Crawl-delay (optional - helps with rate limiting on smaller hosts)
+Crawl-delay: 10
