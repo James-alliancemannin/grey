@@ -1,0 +1,60 @@
+/* --------------------------------------------------------------
+   humans.txt
+   -------------------------------------------------------------- */
+
+            conspiracy.im
+   The Archive of Unexplained Narratives
+
+   "Nothing remains hidden forever."
+
+   Made with virgoan suspicion, late-night research, and caffeine.
+
+/* TEAM */
+
+    Anonymous Archivist Collective
+    Role:        Curator · Researcher · Signal Preserver
+    Twitter:     — (redacted)
+    Location:    Somewhere off-grid
+    From:        1978 → ∞
+    What we do:  Preserve patterns they tried to erase
+
+    If you're reading this: congratulations, you found the humans file.
+    There is no public team. There never was.
+
+
+/* THANKS & INSPIRATION */
+
+    To the whistleblowers who lost everything.
+    To the signal hunters still listening in the noise.
+    To the ones who looked up and never look away.
+
+    Special thanks to:
+    • The three people who still believe Vrillon was real
+    • Every anon who dropped FOIA crumbs on obscure forums
+    • The static that refuses to stay silent
+
+/* TECH STACK (because why not) */
+
+    Built with:
+    • HTML · CSS · Vanilla JS
+    • Tailwind CSS (because life is too short)
+    • Three.js (for the glowy void in the hero)
+    • Pure spite toward gatekeepers
+
+    Hosted behind: Cloudflare (they still don't know what we have)
+
+    No trackers. No cookies. No apologies.
+
+/* CONTACT / LEGAL */
+
+    We don't have an email. We don't have a phone.
+    If you really need to reach us: find the signal in the static.
+
+    All content is speculative editorial fiction / pattern recognition.
+    Viewer discretion is strongly advised.
+    Nothing here is official. Nothing here is accidental. Nothing here is financial advice O;)
+
+    © 1978–2026 — Anonymous Archivist Collective
+    Identity withheld. Forever.
+
+    Last updated: March 20, 2026
