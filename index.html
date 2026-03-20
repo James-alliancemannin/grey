@@ -48,22 +48,31 @@
             animation: scan 10s linear infinite; pointer-events: none; mix-blend-mode: screen; opacity: 0.6; z-index: 2;
         }
         @keyframes scan { 0% { transform: translateY(-120%); } 100% { transform: translateY(350%); } }
-        .card { 
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); 
-            background: rgba(10,15,28,0.75); border: 1px solid rgba(20,243,200,0.18);
+
+        /* === BLUR REVEAL EFFECT ON CARDS === */
+        .card {
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            filter: blur(12px) brightness(0.7);
+            background: rgba(10,15,28,0.85);
+            border: 1px solid rgba(20,243,200,0.15);
             overflow: hidden;
         }
-        .card:hover { 
-            transform: translateY(-14px) scale(1.02); 
-            box-shadow: 0 30px 60px -15px rgb(var(--accent)/0.35); 
+        .card:hover {
+            filter: blur(0px) brightness(1);
+            transform: translateY(-14px) scale(1.03);
+            box-shadow: 0 30px 60px -15px rgb(var(--accent)/0.45);
             border-color: rgb(var(--accent)/0.6);
         }
-        .card img { transition: transform 0.7s ease; filter: brightness(0.85) contrast(1.1); }
-        .card:hover img { transform: scale(1.12); filter: brightness(1.05); }
+        .card img {
+            transition: transform 0.9s ease;
+        }
+        .card:hover img {
+            transform: scale(1.08);
+        }
+
         #three-canvas { position: absolute; inset: 0; z-index: 1; mix-blend-mode: screen; opacity: 0.82; }
         @media (max-width: 768px) {
             h1.logo-font { font-size: 5.5rem; line-height: 0.9; }
-            p.text-3xl { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -110,12 +119,12 @@
                 THE ARCHIVE
             </h1>
 
-            <p class="mt-6 text-2xl sm:text-3xl md:text-4xl text-gray-300 font-light max-w-3xl mx-auto italic">
+            <p class="mt-8 text-2xl sm:text-3xl md:text-4xl text-gray-300 font-light max-w-4xl mx-auto italic">
                 "Three things cannot be long hidden: the sun, the moon, and the truth." — Buddha
             </p>
 
-            <p class="mt-4 text-xl sm:text-2xl text-cyan-400 font-medium tracking-wide">
-                Take the RED PILL
+            <p class="mt-5 text-2xl text-cyan-400 font-medium tracking-widest">
+                TAKE THE RED PILL
             </p>
 
             <div class="mt-16 flex flex-col sm:flex-row gap-6 justify-center">
@@ -175,7 +184,7 @@
 
             grid.innerHTML = shown.map(a => `
                 <a href="articles/${a.slug}" class="card group block rounded-2xl overflow-hidden">
-                    <img src="${a.img}" alt="${a.title}" class="w-full h-48 object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500">
+                    <img src="${a.img}" alt="${a.title}" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <div class="text-xs font-mono text-cyan-400/80 mb-2">FILE • ${a.num} • ${a.category}</div>
                         <h3 class="text-2xl font-light mb-3 group-hover:text-cyan-300 transition-colors">${a.title}</h3>
@@ -191,7 +200,7 @@
         renderArticles();
     </script>
 
-    <!-- Advanced Three.js: Eerie Night Sky + Conspiracy Signals -->
+    <!-- Three.js (unchanged – already ultra high-end) -->
     <script type="module">
         import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js';
 
@@ -349,12 +358,35 @@
         window.addEventListener('load', init);
     </script>
 
-    <!-- Article Rendering Script (unchanged) -->
+    <!-- Article Rendering Script -->
     <script>
-        const articles = [ /* ... your articles array ... */ ];
+        const articles = [
+            { num: "001", title: "Grey Visitors and the Silence Above", summary: "They were here. They still are. Eyewitnesses silenced, radar ghosts ignored. What happens when the silence breaks?", category: "Aliens", slug: "article-001.html", img: "https://miro.medium.com/v2/resize:fit:1400/1*ydp9M7DT52mshFWkq38W1w.jpeg" },
+            { num: "002", title: "The Hollow Signal", summary: "A frequency from inside the Earth. First heard in 1963. Now louder. What’s broadcasting from below?", category: "Signals", slug: "article-002.html", img: "https://thumbs.dreamstime.com/b/hidden-underground-ai-bunker-featuring-glowing-stream-light-along-rocky-terrain-night-deep-earth-concealed-360378888.jpg" },
+            { num: "003", title: "Black Triangles Over Water", summary: "Silent giants glide where no aircraft can. They enter the ocean without a ripple. Official story? Still waiting.", category: "Government", slug: "article-003.html", img: "https://hangar1publishing.com/cdn/shop/articles/90a0bc6cc34c73edd4e5a159e2360a7c.png?v=1746046042" },
+            { num: "004", title: "The Forgotten Lunar Transcript", summary: "Apollo 11 voices cut from history. Structures on the far side. They saw something. We weren’t supposed to know.", category: "Ancient", slug: "article-004.html", img: "https://www.tsijournals.com/articles-images/space-exploration-image-unusual-structures-discovered-5-2-102-g001.png" },
+            { num: "005", title: "The Watchers Beneath the Ice", summary: "Antarctica hides more than cold. Structures older than us. Still active. The ice is thinning.", category: "Paranormal", slug: "article-005.html", img: "https://indiandefencereview.com/wp-content/uploads/2025/10/hidden-giant-beneath-the-ice-vast-granite-body-discovered-under-west-antarctica.png" },
+            { num: "006", title: "Patterns in the Static", summary: "Every hijack, glitch, blackout since 1977 hides the same code. The noise isn’t broken. It’s talking.", category: "Signals", slug: "article-006.html", img: "https://upload.wikimedia.org/wikipedia/commons/a/a8/TV_noise.jpg" }
+        ];
+
         function renderArticles(filter = "") {
-            // same as before
+            const grid = document.getElementById("articles-grid");
+            const term = filter.toLowerCase().trim();
+            const shown = term ? articles.filter(a => a.title.toLowerCase().includes(term) || a.summary.toLowerCase().includes(term)) : articles;
+
+            grid.innerHTML = shown.map(a => `
+                <a href="articles/${a.slug}" class="card group block rounded-2xl overflow-hidden">
+                    <img src="${a.img}" alt="${a.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-xs font-mono text-cyan-400/80 mb-2">FILE • ${a.num} • ${a.category}</div>
+                        <h3 class="text-2xl font-light mb-3 group-hover:text-cyan-300 transition-colors">${a.title}</h3>
+                        <p class="text-gray-400 text-base line-clamp-3">${a.summary}</p>
+                        <div class="mt-5 inline-block text-cyan-400 text-sm font-medium group-hover:underline">Read Before They Delete It →</div>
+                    </div>
+                </a>
+            `).join('');
         }
+
         document.getElementById("search-input").addEventListener("input", e => renderArticles(e.target.value));
         document.getElementById("menu-btn").addEventListener("click", () => document.getElementById("mobile-menu").classList.toggle("hidden"));
         renderArticles();
