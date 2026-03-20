@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- ==============================================
+         Essential Meta Tags + SEO Foundation
+    ============================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Primary Meta Tags -->
+    <title>The Forgotten Lunar Transcript — conspiracy.im</title>
+    <meta name="description" content="NASA audio logs from Apollo 11 that were never meant to reach the public domain. Suppressed exchanges, anomalous observations, and the transcript that vanished from official records. File 004 from the Archive.">
+    <meta name="author" content="Anonymous Archivist">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://conspiracy.im/articles/article-004.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Forgotten Lunar Transcript | conspiracy.im">
+    <meta property="og:description" content="Apollo 11 voice logs containing unreleased dialogue about structures and presences on the Moon. Redacted, scrubbed, but fragments persist. What did they really see?">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://conspiracy.im/articles/article-004.html">
+    <meta property="og:site_name" content="conspiracy.im">
+    <meta property="og:image" content="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-031-97074-0_9/MediaObjects/621778_1_En_9_Fig1_HTML.jpg">
+    <meta property="og:image:width" content="685">
+    <meta property="og:image:height" content="513">
+    <meta property="og:image:alt" content="Eerie lunar landscape with anomalous shadowed structures in craters under starry sky">
+    <meta property="article:published_time" content="2026-03-23T06:45:00Z">
+    <meta property="article:author" content="Anonymous">
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Forgotten Lunar Transcript — conspiracy.im">
+    <meta name="twitter:description" content="Apollo-era audio never intended for release. Structures on the far side. Voices that were cut. File 004.">
+    <meta name="twitter:image" content="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-031-97074-0_9/MediaObjects/621778_1_En_9_Fig1_HTML.jpg">
+    <meta name="twitter:image:alt" content="Mysterious moon surface with subtle hidden formations and dark craters">
+
+    <!-- Theme & Browser -->
+    <meta name="theme-color" content="#02040a">
+    <meta name="msapplication-TileColor" content="#02040a">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Security -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --accent: 20 243 200;
+            --accent-glow: rgba(20, 243, 200, 0.7);
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .logo-font {
+            font-family: 'Space Grotesk', monospace;
+        }
+        .glow-text {
+            text-shadow: 0 0 20px var(--accent-glow), 0 0 40px rgba(20, 243, 200, 0.25);
+        }
+        .classified-stamp {
+            transform: rotate(-6deg);
+            font-size: 11px;
+            letter-spacing: 4px;
+            border: 2px solid rgb(234 179 8 / 0.8);
+            color: rgb(234 179 8);
+            padding: 4px 18px;
+            background: rgba(0,0,0,0.5);
+        }
+        .scanline {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
+            animation: scan 12s linear infinite;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            opacity: 0.5;
+        }
+        @keyframes scan {
+            0% { transform: translateY(-120%); }
+            100% { transform: translateY(300%); }
+        }
+        .content p {
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+        }
+        .content h2, .content h3 {
+            font-family: 'Space Grotesk', monospace;
+            letter-spacing: -0.02em;
+        }
+        .transcript {
+            background: rgba(0,0,0,0.6);
+            border-left: 4px solid #14f3c8;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            color: #e0f2f1;
+        }
+    </style>
+</head>
+<body class="bg-[#02040a] text-[#e5f5f2] leading-relaxed">
+
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#02040a]/92 backdrop-blur-xl border-b border-white/8">
+        <div class="max-w-screen-2xl mx-auto px-6 sm:px-10 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#14f3c8] to-[#0b9b7f] flex items-center justify-center text-xs font-bold text-black shadow-lg shadow-[#14f3c8]/30">C</div>
+                <a href="/" class="logo-font text-3xl font-semibold tracking-tight text-white hover:text-[#14f3c8] transition-colors">conspiracy.im</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="/" class="text-white/90 hover:text-white transition-colors">Home</a>
+                <a href="/#featured" class="text-white/90 hover:text-white transition-colors">Archive</a>
+                <a href="#" class="text-white/90 hover:text-white transition-colors">Signals</a>
+                <a href="#" class="text-white/90 hover:text-white transition-colors">About</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <div class="classified-stamp text-xs font-mono">FILE • 004</div>
+                <button id="mobile-menu-btn" class="md:hidden text-3xl text-white/80 hover:text-white transition-colors">☰</button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-[#02040a] border-t border-white/10 py-8 px-6">
+            <div class="flex flex-col gap-6 text-lg">
+                <a href="/" class="hover:text-[#14f3c8] transition-colors">Home</a>
+                <a href="/#featured" class="hover:text-[#14f3c8] transition-colors">Archive</a>
+                <a href="#" class="hover:text-[#14f3c8] transition-colors">Signals</a>
+                <a href="#" class="hover:text-[#14f3c8] transition-colors">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ARTICLE HERO -->
+    <header class="relative pt-32 pb-20 px-6 sm:px-10 bg-gradient-to-b from-[#02040a] via-[#0a0f1c] to-[#02040a]">
+        <div class="scanline"></div>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-3 bg-black/50 backdrop-blur-sm text-white/70 text-xs font-mono tracking-[3px] px-7 py-3.5 rounded-full border border-white/10 mb-8">
+                <div class="w-2.5 h-2.5 bg-[#14f3c8] rounded-full animate-pulse"></div>
+                FILE • 004 • AUDIO FRAGMENT
+            </div>
+
+            <h1 class="logo-font text-5xl sm:text-7xl md:text-8xl leading-tight font-black tracking-[-0.06em] text-white glow-text mb-6">
+                The Forgotten Lunar Transcript
+            </h1>
+
+            <p class="text-xl sm:text-2xl text-white/70 max-w-3xl mx-auto font-light">
+                Apollo 11 logs that were scrubbed from history — voices describing what should not be there.
+            </p>
+
+            <div class="mt-12 text-sm font-mono text-white/50 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+                <div>March 23, 2026</div>
+                <div class="w-px h-4 bg-white/20 hidden sm:block"></div>
+                <div>Archive Index • Ancient • Lunar Anomalies • Level 7 Clearance</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-4xl mx-auto px-6 sm:px-10 py-16">
+        <article class="content prose prose-invert prose-headings:font-semibold prose-headings:text-white prose-a:text-[#14f3c8] prose-a:no-underline hover:prose-a:underline prose-strong:text-white/90 max-w-none">
+            <p><strong>Classification: COMPARTMENTED — Never Released</strong></p>
+            <p>Among the thousands of hours of Apollo mission audio, a segment from July 20, 1969 (approx. 04:15–04:30 UTC during lunar orbit) was allegedly removed from NASA archives shortly after return. Leaked transcripts — sourced from multiple retired technicians and ham radio intercepts — describe visual anomalies on the far side: geometric formations, lights, and structures inconsistent with natural geology.</p>
+
+            <!-- Added eerie lunar anomaly image -->
+            <figure class="my-12">
+                <img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-3-031-97074-0_9/MediaObjects/621778_1_En_9_Fig1_HTML.jpg" 
+                     alt="Moody lunar surface with shadowed anomalous structures and craters under starry void" 
+                     class="w-full rounded-2xl border border-white/10 shadow-2xl shadow-[#14f3c8]/20 object-cover">
+                <figcaption class="text-center text-sm text-white/50 mt-4 font-mono italic">
+                    Enhanced orbital composite — far-side anomaly cluster (source: cross-referenced lunar mapping data)
+                </figcaption>
+            </figure>
+
+            <h2>The Missing Minutes</h2>
+            <p>Publicly released transcripts jump from routine systems checks to descent prep. The gap — roughly 15 minutes — was explained as "tape changeover" or "loss of signal." Independent analysis of surviving raw tapes (via FOIA and whistleblower copies) reveals overlapping dialogue not in official versions.</p>
+
+            <div class="transcript">
+Apollo 11 (Orbit): "Houston, we've got... something on the far side. Large... rectangular... shadows in the crater. Not natural."
+Houston: "Say again, 11?"
+Apollo 11: "Multiple... structures. Like panels or... platforms. Lit from within. They're... watching."
+[static burst]
+Apollo 11: "These things are enormous. We shouldn't be here."
+[transmission cuts]
+            </div>
+
+            <h3>Supporting Evidence — Timeline</h3>
+            <ul>
+                <li><strong>1969 (Apollo 11)</strong> — Initial far-side visual reports during orbit. Audio allegedly excised before public broadcast.</li>
+                <li><strong>1972 (Apollo 17)</strong> — Crew notes "odd geometric features" in transcripts; later classified portions released with heavy redactions.</li>
+                <li><strong>1990s–2000s</strong> — Whistleblowers (e.g., former NASA audio techs) claim master tapes were overwritten or destroyed under orders.</li>
+                <li><strong>2010s–2025</strong> — Digitized leaks surface on dark web archives; spectral analysis shows consistent voice prints matching Aldrin/Armstrong/Collins.</li>
+            </ul>
+
+            <h2>The Cover Narrative</h2>
+            <p>NASA maintains no such dialogue exists — attributing rumors to hoax transcripts or radio interference. Yet multiple independent recordings (amateur shortwave, Soviet tracking stations) corroborate the content. The far side remains radio-silent to Earth; perfect for concealment if structures were present.</p>
+
+            <blockquote class="border-l-4 border-[#14f3c8]/50 pl-6 italic text-white/80 my-10">
+                “We came in peace for all mankind. We left with questions no one would answer.”  
+                — Redacted Apollo-era astronaut reflection, private correspondence leak, 1983
+            </blockquote>
+
+            <h2>Persistent Anomalies</h2>
+            <ul>
+                <li>Why do lunar orbiter photos show unexplained linear features and dome-like shapes in permanently shadowed regions?</li>
+                <li>What caused the brief "lost time" in mission logs that matches the alleged transcript window?</li>
+                <li>If artificial — indigenous, ancient, or recent visitors?</li>
+            </ul>
+
+            <p>The Moon watches in silence. The transcript remembers. The archive preserves what was meant to be erased.</p>
+
+            <hr class="my-16 border-white/20">
+
+            <p class="text-sm text-white/50 font-mono text-center">
+                End of File 004 • Echoes from the void persist.<br>
+                Viewer discretion advised. Nothing herein constitutes official record.
+            </p>
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-white/8 py-16 text-center text-white/40 text-sm font-mono">
+        <div class="max-w-4xl mx-auto px-6">
+            <p>conspiracy.im — EST. 1978</p>
+            <p class="mt-2">"Nothing remains hidden forever."</p>
+            <p class="mt-6 text-xs">All content speculative • For entertainment and pattern recognition only • © 2026 Anonymous</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
